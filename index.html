@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0F4C81" />
+
+    <!-- Primary SEO tags (per-page titles/descriptions are set at runtime) -->
+    <title>North Public School — Learning Today, Leading Tomorrow</title>
+    <meta
+      name="description"
+      content="North Public School is a premier CBSE school in India offering smart classrooms, experienced faculty, and holistic education from Pre-Primary to Senior Secondary."
+    />
+    <meta name="author" content="North Public School" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="North Public School" />
+    <meta
+      property="og:description"
+      content="Empowering Young Minds for a Better Tomorrow."
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- GitHub Pages SPA support: restores the deep-link path saved by 404.html.
+         Harmless on Netlify/Vercel. See public/404.html and README. -->
+    <script>
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&')
+            })
+            .join('?')
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash)
+        }
+      })(window.location)
+    </script>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
