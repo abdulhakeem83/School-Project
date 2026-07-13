@@ -51,6 +51,7 @@ school-project-website/
     │   ├── TeacherCard, NewsCard, TestimonialCard
     │   ├── GalleryGrid (with lightbox)
     │   ├── SmartImage, Avatar (graceful image/avatar fallbacks)
+    │   ├── WhatsAppButton (floating contact button)
     │   └── ScrollToTop, PageLoader, PageTransition
     ├── pages/                  # one file per route
     │   ├── Home, About, Admissions, Facilities
@@ -92,14 +93,37 @@ Home · About · Admissions · Facilities · Faculty · Gallery · Contact · Lo
 
 ## ☁️ Deployment
 
-Works out of the box on **Netlify**, **Vercel** and **GitHub Pages** — the SPA
-redirect files for all three are already included.
+The site is a static SPA and works out of the box on **Vercel**, **Netlify** and
+**GitHub Pages** — the SPA redirect files for all three are already included.
+The build command is `npm run build` and the publish/output directory is `dist/`.
 
-- **Netlify** → build `npm run build`, publish `dist/` (uses `public/_redirects`).
-- **Vercel** → framework preset “Vite”; `vercel.json` handles routing.
-- **GitHub Pages** → build and deploy `dist/`. `public/404.html` + a snippet in
-  `index.html` handle deep-link routing. _(Alternatively, swap `BrowserRouter`
-  for `HashRouter` in `src/main.jsx`.)_
+### Recommended — Vercel (from the pushed repo)
+
+`vercel.json` is already configured, so this is the fastest path to a live URL:
+
+1. Go to **[vercel.com](https://vercel.com)** and sign in with GitHub.
+2. **Add New → Project** and import the `School-Project` repository.
+3. Vercel auto-detects Vite. Confirm the settings:
+   - **Framework preset:** Vite
+   - **Build command:** `npm run build`
+   - **Output directory:** `dist`
+4. Click **Deploy**. You get a live `*.vercel.app` URL in ~1 minute.
+5. Every push to `main` redeploys automatically. To ship, merge `develop → main`
+   (or change the Production Branch to `develop` in **Settings → Git**).
+6. _(Optional)_ Add a custom domain under **Settings → Domains**.
+
+### Alternative — Netlify
+
+1. **[app.netlify.com](https://app.netlify.com)** → **Add new site → Import from Git** → pick the repo.
+2. Build command `npm run build`, publish directory `dist`. Deploy.
+3. SPA routing is handled by `public/_redirects` (copied into `dist/` on build).
+
+### Alternative — GitHub Pages
+
+1. `npm run build`, then publish the `dist/` folder to a `gh-pages` branch
+   (e.g. with `npx gh-pages -d dist`) or via a GitHub Actions workflow.
+2. Deep-link routing is handled by `public/404.html` + the snippet in `index.html`.
+   _(Alternatively, swap `BrowserRouter` for `HashRouter` in `src/main.jsx`.)_
 
 ## 🔮 Phase 2 — ERP (Planned)
 
