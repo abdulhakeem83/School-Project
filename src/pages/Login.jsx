@@ -16,7 +16,7 @@ export default function Login() {
   useSEO({
     title: 'School ERP — Preview',
     description:
-      'A preview of the North Public School ERP — simple modules for Students, Teachers, Management and a public Gallery. Coming in Phase 2.',
+      'A preview of the Apple Valley Creative School ERP — simple modules for Students, Teachers, Management and a public Gallery. Coming soon.',
   })
 
   return (
@@ -43,7 +43,7 @@ export default function Login() {
             <p className="mt-4 text-lg font-medium text-accent">Simple. Focused. Easy to use.</p>
             <p className="mx-auto mt-3 max-w-xl text-white/80">
               Just the essentials — four modules to manage students, teachers, finances and the
-              school gallery. No clutter, no complexity. Launching in Phase 2.
+              school gallery. No clutter, no complexity. Launching soon.
             </p>
           </motion.div>
         </div>
@@ -141,9 +141,9 @@ export default function Login() {
             Kept simple on purpose
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-slate-600">
-            This School ERP will be implemented in <strong className="text-primary">Phase 2</strong>{' '}
-            after design approval. Only these four modules are planned — an easy-to-use system with
-            secure logins added once the design is signed off.
+            This School ERP is <strong className="text-primary">coming soon</strong>. Only these
+            four modules are planned — an easy-to-use system with secure logins for students,
+            teachers and management.
           </p>
 
           <Link to="/" className="btn-ghost mt-6">

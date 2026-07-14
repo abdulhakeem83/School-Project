@@ -7,7 +7,7 @@ import Avatar from './Avatar'
  * Testimonial card for parents, students and alumni.
  */
 export default function TestimonialCard({ testimonial }) {
-  const { name, role, quote, rating = 5 } = testimonial
+  const { name, role, quote, rating = 5, photo } = testimonial
 
   return (
     <motion.figure
@@ -26,7 +26,7 @@ export default function TestimonialCard({ testimonial }) {
       </div>
 
       <figcaption className="flex items-center gap-3 border-t border-slate-100 pt-4">
-        <Avatar name={name} size="sm" />
+        <Avatar name={name} src={photo} size="sm" />
         <div>
           <div className="font-semibold text-ink">{name}</div>
           <div className="text-xs text-slate-500">{role}</div>

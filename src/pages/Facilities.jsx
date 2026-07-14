@@ -14,7 +14,7 @@ export default function Facilities() {
   useSEO({
     title: 'Facilities',
     description:
-      'Explore North Public School’s world-class facilities — library, science & computer labs, smart classes, sports, transport, medical room, cafeteria and more.',
+      'Explore the facilities at Apple Valley Creative School — well-organised classrooms, library, activity spaces and a safe, inspiring learning environment.',
   })
 
   return (

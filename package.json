@@ -1,9 +1,9 @@
 {
-  "name": "north-public-school",
+  "name": "apple-valley-creative-school",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "North Public School — static marketing website (Phase 1), ready to grow into a School ERP.",
+  "description": "Apple Valley Creative School, Basavakalyan — school website built with React + Vite + Tailwind.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

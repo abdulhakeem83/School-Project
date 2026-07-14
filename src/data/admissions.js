@@ -37,7 +37,7 @@ export const ADMISSION_STEPS = [
   {
     icon: PartyPopper,
     title: 'Welcome Aboard',
-    description: 'Collect the welcome kit, uniform details and join the North Public School family!',
+    description: 'Collect the welcome kit, uniform details and join the Apple Valley Creative School family!',
   },
 ]
 
@@ -46,8 +46,7 @@ export const ELIGIBILITY = [
   { grade: 'LKG', age: '4+ years as on 31st March' },
   { grade: 'UKG', age: '5+ years as on 31st March' },
   { grade: 'Class I', age: '6+ years as on 31st March' },
-  { grade: 'Class II – IX', age: 'As per previous grade completion' },
-  { grade: 'Class XI', age: 'Based on Class X results & stream availability' },
+  { grade: 'Class II – X', age: 'As per previous grade completion' },
 ]
 
 export const DOCUMENTS = [
@@ -60,20 +59,20 @@ export const DOCUMENTS = [
   'Caste / category certificate (if applicable)',
 ]
 
-// Indicative fee structure (annual, in INR) — static/demo values.
+// Fee structure — please contact the school office for current fees.
+// TODO: replace 'On request' with the school's actual fee figures.
 export const FEE_STRUCTURE = [
-  { level: 'Pre-Primary (Nursery – UKG)', admission: '₹ 15,000', tuition: '₹ 48,000', transport: '₹ 12,000' },
-  { level: 'Primary (I – V)', admission: '₹ 18,000', tuition: '₹ 58,000', transport: '₹ 12,000' },
-  { level: 'Middle (VI – VIII)', admission: '₹ 20,000', tuition: '₹ 66,000', transport: '₹ 14,000' },
-  { level: 'High School (IX – X)', admission: '₹ 22,000', tuition: '₹ 74,000', transport: '₹ 14,000' },
-  { level: 'Senior Secondary (XI – XII)', admission: '₹ 25,000', tuition: '₹ 86,000', transport: '₹ 16,000' },
+  { level: 'Pre-Primary (Nursery – UKG)', admission: 'On request', tuition: 'On request', transport: 'On request' },
+  { level: 'Primary (I – V)', admission: 'On request', tuition: 'On request', transport: 'On request' },
+  { level: 'Higher Primary (VI – VIII)', admission: 'On request', tuition: 'On request', transport: 'On request' },
+  { level: 'High School (IX – X)', admission: 'On request', tuition: 'On request', transport: 'On request' },
 ]
 
 export const TIMINGS = [
-  { label: 'Pre-Primary', value: '8:30 AM – 12:30 PM' },
-  { label: 'Primary (I – V)', value: '8:00 AM – 2:00 PM' },
-  { label: 'Classes VI – XII', value: '8:00 AM – 3:30 PM' },
-  { label: 'School Office', value: 'Mon – Sat · 8:30 AM – 4:00 PM' },
+  { label: 'Pre-Primary', value: '9:00 AM – 12:30 PM' },
+  { label: 'Primary (I – V)', value: '9:00 AM – 2:00 PM' },
+  { label: 'Classes VI – X', value: '9:00 AM – 3:30 PM' },
+  { label: 'School Office', value: 'Mon – Sat · 9:00 AM – 4:00 PM' },
 ]
 
 export const FAQS = [
@@ -87,18 +86,18 @@ export const FAQS = [
   },
   {
     q: 'What is the student-teacher ratio?',
-    a: 'We maintain an average ratio of 25:1, ensuring every child receives individual attention and mentoring.',
+    a: 'We keep our classes small so that every child receives individual attention and caring mentorship.',
   },
   {
     q: 'Does the school provide transport facilities?',
-    a: 'Yes. We operate a GPS-tracked bus fleet with trained drivers and attendants covering all major routes across the city.',
+    a: 'Please contact the school office to check transport availability for your area.',
   },
   {
-    q: 'Which board is the school affiliated to?',
-    a: 'North Public School is affiliated to the Central Board of Secondary Education (CBSE), New Delhi.',
+    q: 'What kind of education does the school offer?',
+    a: 'Apple Valley Creative School offers a perfect blend of high-quality modern education and comprehensive religious (Deeni) education, from Pre-Primary to High School.',
   },
   {
-    q: 'Are scholarships available?',
-    a: 'Yes, merit-based and need-based scholarships are available for deserving students. Please contact the admissions office for details.',
+    q: 'Are scholarships or concessions available?',
+    a: 'Please contact the school office to learn about available scholarships and concessions for deserving students.',
   },
 ]

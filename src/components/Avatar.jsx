@@ -1,5 +1,8 @@
-// Branded initials avatar for people (faculty, testimonials).
-// Clean and always available — no external headshot dependency in Phase 1.
+// Avatar for people (faculty, testimonials). Shows a photo when `src` is
+// provided and gracefully falls back to a clean, branded initials avatar if
+// the image is missing or fails to load — so the UI never breaks.
+
+import { useState } from 'react'
 
 const GRADIENTS = [
   'from-primary-600 to-primary-400',
@@ -20,12 +23,26 @@ function initials(name = '') {
     .join('')
 }
 
-export default function Avatar({ name, size = 'md', className = '' }) {
+export default function Avatar({ name, src, size = 'md', className = '' }) {
+  const [imgOk, setImgOk] = useState(Boolean(src))
+
   const sizes = {
     sm: 'h-12 w-12 text-base',
     md: 'h-20 w-20 text-2xl',
     lg: 'h-24 w-24 text-3xl',
   }
+
+  if (src && imgOk) {
+    return (
+      <img
+        src={src}
+        alt={name}
+        onError={() => setImgOk(false)}
+        className={`${sizes[size]} rounded-full bg-primary-50 object-cover shadow-soft ring-4 ring-white ${className}`}
+      />
+    )
+  }
+
   // Deterministic gradient based on the name so it stays stable.
   const idx = (name?.charCodeAt(0) || 0) % GRADIENTS.length
 

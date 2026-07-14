@@ -56,6 +56,46 @@
   .eyebrow {
     @apply inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-semibold uppercase tracking-wide text-primary;
   }
+
+  /* Animated brand gradient text — for highlight words & key headings */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(100deg, #1D4ED8, #E11D2A, #FFC20E, #1D4ED8);
+    background-size: 300% 100%;
+    animation: gradient-pan 6s ease infinite;
+  }
+
+  /* Highlighted motto / keyword pill */
+  .motto {
+    @apply font-extrabold text-brandred;
+  }
+}
+
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 22s linear infinite;
+  }
+  .animate-shine::after {
+    content: '';
+    @apply absolute inset-0 -translate-x-full;
+    background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.45) 50%, transparent 100%);
+    animation: shine 3.5s ease-in-out infinite;
+  }
+}
+
+@keyframes gradient-pan {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  60%, 100% { transform: translateX(200%); }
 }
 
 /* Custom, subtle scrollbar */

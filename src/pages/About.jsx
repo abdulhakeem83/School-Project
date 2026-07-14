@@ -9,29 +9,45 @@ import CTASection from '../components/CTASection'
 import Avatar from '../components/Avatar'
 import SmartImage from '../components/SmartImage'
 
-import { SCHOOL, photo } from '../data/constants'
-import { TIMELINE, ACHIEVEMENTS } from '../data/highlights'
+import { SCHOOL, asset } from '../data/constants'
 import { staggerContainer, fadeUp, slideRight, inView } from '../utils/motion'
 
+// Our Mission, expressed as four guiding values.
 const CORE_VALUES = [
-  { icon: Heart, title: 'Compassion', text: 'Kindness and empathy at the heart of all we do.' },
-  { icon: Sparkles, title: 'Excellence', text: 'Striving to be our best in every endeavour.' },
-  { icon: Target, title: 'Integrity', text: 'Honesty, responsibility and strong character.' },
-  { icon: Eye, title: 'Curiosity', text: 'A lifelong love of learning and discovery.' },
+  {
+    icon: Sparkles,
+    title: 'Holistic Education',
+    text: 'A perfect blend of high-quality modern academics and comprehensive religious (Deeni) education.',
+  },
+  {
+    icon: Heart,
+    title: 'Creative Excellence',
+    text: 'An inspiring environment that encourages critical thinking, innovation and practical learning over rote memorisation.',
+  },
+  {
+    icon: Award,
+    title: 'Dedicated Mentorship',
+    text: 'Highly qualified, experienced educators who guide, motivate and unlock the true potential of every child.',
+  },
+  {
+    icon: Target,
+    title: 'Character Building',
+    text: 'Strong moral ethics, cultural respect and a lifelong love for learning in a safe, supportive atmosphere.',
+  },
 ]
 
-const MESSAGES = [
-  {
-    name: 'Mr. Suresh Agarwal',
-    role: 'Chairman',
-    text: `When we founded ${SCHOOL.name}, we dreamed of a place where children are valued as individuals and inspired to dream big. Today, that dream lives in every classroom, every field and every smile on our campus. We remain committed to providing education that builds not just successful careers, but good human beings.`,
-  },
-  {
-    name: 'Dr. Anjali Mehta',
-    role: 'Principal',
-    text: `Our approach is simple: know every child, challenge every child, and celebrate every child. We combine a rigorous CBSE curriculum with sports, arts and values so our students grow into confident, compassionate and capable young leaders. I warmly invite you to visit us and experience the North Public School difference.`,
-  },
-]
+// Message from the President.
+const PRESIDENT = {
+  name: 'Syed Saber',
+  role: `President, ${SCHOOL.name}`,
+  paragraphs: [
+    'Dear Parents, Students, and Well-wishers, welcome to Apple Valley Creative School.',
+    'From the very inception of this institution, our guiding philosophy has been rooted in the belief that education is the most powerful tool to transform society. At Apple Valley, our motto, “Where Creativity Meets Excellence,” is not just a slogan; it is the core foundation of everything we do.',
+    'We live in a rapidly changing world that demands not just academic intelligence, but also strong character, adaptability, and deep moral values. To achieve this, we have brought together a dedicated team of highly qualified, experienced, and deeply committed educators. Together, we work tirelessly to provide a balanced environment where high-quality modern education seamlessly blends with comprehensive religious (Deeni) education.',
+    'Our goal is to ensure that while our students scale great heights in the modern world, they remain firmly anchored in their faith, culture, and ethical values. We do not just aim to produce successful professionals; we aim to nurture compassionate leaders and responsible citizens who will make our community proud.',
+    'I invite you to be a part of this beautiful journey as we work together to unlock the true potential of our children and guide them toward a bright, successful future.',
+  ],
+}
 
 export default function About() {
   useSEO({
@@ -53,7 +69,7 @@ export default function About() {
           <motion.div variants={slideRight} initial="hidden" whileInView="show" viewport={inView}>
             <div className="overflow-hidden rounded-3xl shadow-card">
               <SmartImage
-                src={photo('about-campus', 900, 700)}
+                src={asset('images/campus/building.jpg')}
                 alt={`${SCHOOL.name} campus`}
                 label="Our Campus"
                 className="aspect-[4/3] w-full"
@@ -67,18 +83,24 @@ export default function About() {
               Our Story
             </motion.span>
             <motion.h2 variants={fadeUp} className="mt-4 font-display text-3xl font-bold text-ink sm:text-4xl">
-              25 years of shaping young minds
+              Where creativity meets excellence
             </motion.h2>
             <motion.p variants={fadeUp} className="mt-4 text-base leading-relaxed text-slate-600">
-              Founded in {SCHOOL.established}, {SCHOOL.name} began with a simple yet powerful idea —
-              that education should nurture the whole child. What started with a handful of
-              classrooms has blossomed into a thriving campus of over 1,000 students and 75+
-              dedicated educators.
+              Located at Chilla Galli in Basavakalyan, {SCHOOL.name} is a premier educational
+              institution dedicated to shaping the bright futures of young minds — nurturing their
+              innate creativity and guiding them toward academic success.
             </motion.p>
             <motion.p variants={fadeUp} className="mt-3 text-base leading-relaxed text-slate-600">
-              {SCHOOL.affiliation}, we offer a seamless journey from Pre-Primary to Senior
-              Secondary, blending academic excellence with sports, arts, technology and strong
-              human values.
+              Our school boasts a dedicated team of highly qualified, experienced and passionate
+              educators who employ modern, interactive teaching methodologies. We believe in
+              holistic development, offering a perfect blend of high-quality modern education
+              alongside comprehensive religious (Deeni) education — so our students grow up with
+              strong academic foundations, excellent moral values and deep spiritual ethics.
+            </motion.p>
+            <motion.p variants={fadeUp} className="mt-3 text-base leading-relaxed text-slate-600">
+              We provide a safe and inspiring environment that empowers children to face the
+              challenges of the modern world with confidence while staying deeply rooted in their
+              cultural and moral values.
             </motion.p>
           </motion.div>
         </div>
@@ -91,12 +113,12 @@ export default function About() {
             {
               icon: Eye,
               title: 'Our Vision',
-              text: 'To be a leading centre of learning that empowers every student to become a confident, responsible and compassionate global citizen — ready to lead in a changing world.',
+              text: 'To be a leading educational institution that empowers students to achieve academic brilliance and creative excellence, while remaining deeply rooted in strong moral, ethical and spiritual values — nurturing confident, compassionate and responsible global citizens who can positively impact the world.',
             },
             {
               icon: Target,
               title: 'Our Mission',
-              text: 'To provide holistic, values-based education through innovative teaching, world-class facilities and a nurturing environment that celebrates the unique potential of every child.',
+              text: 'To provide a perfect blend of modern academics and Deeni education, foster an inspiring environment for critical thinking and innovation, maintain dedicated and experienced mentors, and instill strong moral ethics and a lifelong love for learning.',
             },
           ].map((card, i) => (
             <motion.div
@@ -147,99 +169,47 @@ export default function About() {
         </motion.div>
       </section>
 
-      {/* Chairman & Principal messages */}
+      {/* President's message */}
       <section className="bg-white py-20">
-        <div className="container-page grid gap-6 lg:grid-cols-2">
-          {MESSAGES.map((m, i) => (
-            <motion.figure
-              key={m.role}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={inView}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="card-base flex flex-col gap-4 p-8"
-            >
-              <div className="flex items-center gap-4">
-                <Avatar name={m.name} size="md" />
-                <figcaption>
-                  <div className="font-display text-lg font-bold text-ink">{m.name}</div>
-                  <div className="text-sm font-medium text-primary">{m.role}</div>
-                </figcaption>
-              </div>
-              <blockquote className="leading-relaxed text-slate-600">“{m.text}”</blockquote>
-            </motion.figure>
-          ))}
+        <div className="container-page">
+          <SectionTitle eyebrow="From the President" title="A message from our President" />
+          <motion.figure
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={inView}
+            transition={{ duration: 0.5 }}
+            className="card-base mx-auto mt-12 max-w-3xl p-8 sm:p-10"
+          >
+            <div className="flex items-center gap-4">
+              <Avatar name={PRESIDENT.name} size="md" />
+              <figcaption>
+                <div className="font-display text-lg font-bold text-ink">{PRESIDENT.name}</div>
+                <div className="text-sm font-medium text-primary">{PRESIDENT.role}</div>
+              </figcaption>
+            </div>
+            <blockquote className="mt-6 space-y-4 leading-relaxed text-slate-600">
+              {PRESIDENT.paragraphs.map((p, i) => {
+                const MOTTO = 'Where Creativity Meets Excellence'
+                if (!p.includes(MOTTO)) return <p key={i}>{p}</p>
+                const [before, after] = p.split(MOTTO)
+                return (
+                  <p key={i}>
+                    {before}
+                    <span className="motto">{MOTTO}</span>
+                    {after}
+                  </p>
+                )
+              })}
+            </blockquote>
+            <p className="mt-6 font-display font-semibold text-ink">Warm regards,</p>
+            <p className="text-slate-600">{PRESIDENT.name} — {PRESIDENT.role}</p>
+          </motion.figure>
         </div>
-      </section>
-
-      {/* Achievements Timeline */}
-      <section className="container-page py-20">
-        <SectionTitle
-          eyebrow="Our Journey"
-          title="Milestones & achievements"
-          subtitle="A quarter-century of growth, recognition and proud moments."
-        />
-
-        <div className="relative mx-auto mt-14 max-w-3xl">
-          {/* Vertical line */}
-          <div className="absolute left-4 top-2 h-full w-0.5 bg-primary/15 sm:left-1/2 sm:-translate-x-1/2" />
-
-          <div className="space-y-10">
-            {TIMELINE.map((item, i) => (
-              <motion.div
-                key={item.year}
-                initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={inView}
-                transition={{ duration: 0.5 }}
-                className={`relative pl-12 sm:w-1/2 sm:pl-0 ${
-                  i % 2 === 0 ? 'sm:pr-12 sm:text-right' : 'sm:ml-auto sm:pl-12'
-                }`}
-              >
-                {/* Dot */}
-                <span
-                  className={`absolute left-2.5 top-1.5 h-4 w-4 rounded-full border-4 border-white bg-accent shadow-soft sm:left-auto ${
-                    i % 2 === 0 ? 'sm:-right-2' : 'sm:-left-2'
-                  }`}
-                />
-                <div className="card-base p-5">
-                  <span className="font-display text-2xl font-extrabold text-primary">
-                    {item.year}
-                  </span>
-                  <h3 className="mt-1 font-semibold text-ink">{item.title}</h3>
-                  <p className="mt-1 text-sm text-slate-600">{item.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* Achievement highlights */}
-        <motion.div
-          variants={staggerContainer()}
-          initial="hidden"
-          whileInView="show"
-          viewport={inView}
-          className="mt-16 grid gap-4 sm:grid-cols-2"
-        >
-          {ACHIEVEMENTS.map((a) => (
-            <motion.div
-              key={a.label}
-              variants={fadeUp}
-              className="flex items-center gap-4 rounded-2xl bg-primary/5 p-5 ring-1 ring-primary/10"
-            >
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary text-white">
-                <a.icon className="h-5 w-5" aria-hidden="true" />
-              </span>
-              <span className="text-sm font-medium text-ink">{a.label}</span>
-            </motion.div>
-          ))}
-        </motion.div>
       </section>
 
       <CTASection
         title="Come see it for yourself"
-        subtitle="Book a campus visit and experience the North Public School difference first-hand."
+        subtitle={`Book a campus visit and experience the ${SCHOOL.name} difference first-hand.`}
         primaryLabel="Schedule a Visit"
         primaryTo="/contact"
       />

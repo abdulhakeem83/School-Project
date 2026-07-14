@@ -62,7 +62,7 @@ export default function Admissions() {
   useSEO({
     title: 'Admissions',
     description:
-      'Admissions open at North Public School for 2026–27. View the admission process, eligibility, required documents, fee structure, school timings and FAQs.',
+      'Admissions open at Apple Valley Creative School for 2026–27. View the admission process, eligibility, required documents, fee structure, school timings and FAQs.',
   })
 
   return (
