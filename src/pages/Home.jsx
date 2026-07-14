@@ -21,7 +21,7 @@ import { FACILITIES_PREVIEW } from '../data/facilities'
 import { NEWS } from '../data/news'
 import { TESTIMONIALS } from '../data/testimonials'
 import { GALLERY_PREVIEW } from '../data/gallery'
-import { SCHOOL, photo } from '../data/constants'
+import { SCHOOL, asset } from '../data/constants'
 import { staggerContainer, fadeUp, slideRight, inView } from '../utils/motion'
 
 // Small helper: a section wrapper whose children stagger into view.
@@ -43,11 +43,11 @@ export default function Home() {
   useSEO({
     title: 'Home',
     description:
-      'North Public School — a premier CBSE school in India. Smart classrooms, expert faculty, world-class facilities and 100% board results. Admissions open.',
+      'Apple Valley Creative School, Basavakalyan — where creativity meets excellence. A blend of high-quality modern education and comprehensive religious (Deeni) education. Admissions open.',
   })
 
   const welcomePoints = [
-    'Holistic, child-centred education',
+    'Blend of modern & Deeni education',
     'Experienced and caring faculty',
     'Strong focus on values & character',
   ]
@@ -78,9 +78,9 @@ export default function Home() {
           >
             <div className="overflow-hidden rounded-3xl shadow-card">
               <SmartImage
-                src={photo('principal-welcome', 800, 900)}
-                alt="Students learning at North Public School"
-                label="Our Campus"
+                src={asset('images/campus/student-book.jpg')}
+                alt={`A student at ${SCHOOL.name}`}
+                label="Our Students"
                 className="aspect-[4/5] w-full"
                 imgClassName="aspect-[4/5] w-full object-cover"
               />
@@ -107,20 +107,21 @@ export default function Home() {
               variants={fadeUp}
               className="mt-4 font-display text-3xl font-bold leading-tight text-ink sm:text-4xl"
             >
-              A message from our Principal
+              A message from our President
             </motion.h2>
             <motion.div variants={fadeUp}>
               <Quote className="mt-4 h-8 w-8 text-accent" aria-hidden="true" />
             </motion.div>
             <motion.p variants={fadeUp} className="mt-2 text-base leading-relaxed text-slate-600">
-              At {SCHOOL.name}, we believe every child carries a unique spark. Our role is to
-              nurture that spark into a lifelong flame of curiosity, confidence and compassion.
-              For over two decades, we have combined academic rigour with a warm, supportive
-              environment where children feel safe to explore, question and grow.
+              At {SCHOOL.name}, we believe education is the most powerful tool to transform
+              society. Our motto —{' '}
+              <span className="motto">“Where Creativity Meets Excellence”</span> — is the core
+              foundation of everything we do, combining high-quality modern education with
+              comprehensive religious (Deeni) education.
             </motion.p>
             <motion.p variants={fadeUp} className="mt-3 text-base leading-relaxed text-slate-600">
-              We invite you to become part of our vibrant learning community — where learning
-              today truly means leading tomorrow.
+              Our goal is to ensure that while our students scale great heights in the modern
+              world, they remain firmly anchored in their faith, culture and ethical values.
             </motion.p>
 
             <motion.ul variants={fadeUp} className="mt-5 space-y-2">
@@ -133,10 +134,10 @@ export default function Home() {
             </motion.ul>
 
             <motion.div variants={fadeUp} className="mt-6 flex items-center gap-3">
-              <Avatar name="Dr. Anjali Mehta" size="sm" />
+              <Avatar name="Syed Saber" size="sm" />
               <div>
-                <div className="font-semibold text-ink">Dr. Anjali Mehta</div>
-                <div className="text-sm text-slate-500">Principal, {SCHOOL.name}</div>
+                <div className="font-semibold text-ink">Syed Saber</div>
+                <div className="text-sm text-slate-500">President, {SCHOOL.name}</div>
               </div>
             </motion.div>
           </motion.div>
@@ -229,7 +230,7 @@ export default function Home() {
       <section className="bg-white py-20">
         <div className="container-page">
           <SectionTitle
-            eyebrow="Life at North Public School"
+            eyebrow={`Life at ${SCHOOL.name}`}
             title="A glimpse into our campus"
             subtitle="Moments of learning, celebration and togetherness from around our school."
           />
@@ -250,7 +251,7 @@ export default function Home() {
         <SectionTitle
           eyebrow="Testimonials"
           title="Loved by parents, students & alumni"
-          subtitle="Real words from the families who make up the North Public School community."
+          subtitle={`Real words from the families who make up the ${SCHOOL.name} community.`}
         />
         <Grid className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {TESTIMONIALS.map((t) => (

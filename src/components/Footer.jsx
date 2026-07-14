@@ -11,9 +11,8 @@ import {
   Mail,
   Clock,
   Send,
-  GraduationCap,
 } from 'lucide-react'
-import { SCHOOL, CONTACT, QUICK_LINKS, SOCIAL_LINKS } from '../data/constants'
+import { SCHOOL, CONTACT, QUICK_LINKS, SOCIAL_LINKS, asset } from '../data/constants'
 
 // Map social icon names (from data) to their Lucide components.
 const ICONS = { Facebook, Instagram, Twitter, Youtube, Linkedin }
@@ -38,10 +37,14 @@ export default function Footer() {
         {/* Brand + intro */}
         <div>
           <span className="flex items-center gap-2.5">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent text-ink">
-              <GraduationCap className="h-6 w-6" aria-hidden="true" />
+            <img
+              src={asset('images/logo.jpg')}
+              alt={`${SCHOOL.name} emblem`}
+              className="h-11 w-11 shrink-0 rounded-full object-cover ring-2 ring-accent/70"
+            />
+            <span className="font-display text-base font-bold leading-tight text-white">
+              {SCHOOL.name}
             </span>
-            <span className="font-display text-lg font-bold text-white">{SCHOOL.name}</span>
           </span>
           <p className="mt-4 text-sm leading-relaxed text-slate-400">
             {SCHOOL.tagline}. {SCHOOL.affiliation}. Nurturing confident, compassionate and
@@ -155,7 +158,8 @@ export default function Footer() {
             © {year} {SCHOOL.name}. All rights reserved.
           </p>
           <p>
-            Designed with care · <span className="text-accent">Phase 1 — Static Website</span>
+            <span className="text-accent">The SANA Educational &amp; Cultural Trust</span> ·
+            Basavakalyan, Karnataka
           </p>
         </div>
       </div>

@@ -14,7 +14,7 @@ export default function Faculty() {
   useSEO({
     title: 'Faculty',
     description:
-      'Meet the experienced, caring faculty of North Public School — our Principal, Vice Principal and dedicated teachers across every subject.',
+      'Meet the experienced, caring faculty of Apple Valley Creative School — our dedicated teachers who mentor every child with modern and Deeni education.',
   })
 
   return (

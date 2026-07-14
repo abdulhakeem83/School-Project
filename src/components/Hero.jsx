@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, PlayCircle, GraduationCap, Award, ShieldCheck } from 'lucide-react'
-import { SCHOOL, photo } from '../data/constants'
+import { SCHOOL, asset } from '../data/constants'
 import { staggerContainer, fadeUp } from '../utils/motion'
 
-const HERO_BG = photo('school-building-hero', 1600, 1000)
+const HERO_BG = asset('images/campus/building.jpg')
 
 /**
  * Home page hero: full-bleed school building background, gradient overlay,
@@ -17,7 +17,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <img
           src={HERO_BG}
-          alt="North Public School campus building"
+          alt={`${SCHOOL.name} campus building`}
           className="h-full w-full object-cover"
           fetchpriority="high"
         />
@@ -45,9 +45,10 @@ export default function Hero() {
 
           <motion.h1
             variants={fadeUp}
-            className="mt-6 font-display text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl"
+            className="mt-6 font-display text-4xl font-extrabold leading-tight text-white drop-shadow-lg sm:text-5xl lg:text-6xl"
           >
-            {SCHOOL.headline}
+            Where <span className="text-accent">Creativity</span> Meets{' '}
+            <span className="text-accent">Excellence</span>
           </motion.h1>
 
           <motion.p
@@ -76,11 +77,11 @@ export default function Hero() {
           >
             <li className="flex items-center gap-2">
               <GraduationCap className="h-5 w-5 text-accent" aria-hidden="true" />
-              25 Years of Excellence
+              Modern + Deeni Education
             </li>
             <li className="flex items-center gap-2">
               <Award className="h-5 w-5 text-accent" aria-hidden="true" />
-              100% Board Results
+              Experienced Faculty
             </li>
             <li className="flex items-center gap-2">
               <ShieldCheck className="h-5 w-5 text-accent" aria-hidden="true" />

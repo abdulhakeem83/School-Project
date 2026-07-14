@@ -37,6 +37,16 @@ export default function SectionTitle({
       >
         {title}
       </h2>
+      {/* Animated accent underline */}
+      <motion.span
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={inView}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className={`block h-1 w-20 origin-left rounded-full bg-gradient-to-r from-primary via-brandred to-accent ${
+          align === 'left' ? '' : 'mx-auto'
+        }`}
+      />
       {subtitle && (
         <p className={`text-base leading-relaxed ${light ? 'text-white/80' : 'text-slate-600'}`}>
           {subtitle}

@@ -15,7 +15,7 @@ export default function Gallery() {
   useSEO({
     title: 'Gallery',
     description:
-      'Explore life at North Public School through our photo gallery — campus, sports, Annual Day, national celebrations, science fairs and class activities.',
+      'Explore life at Apple Valley Creative School through our photo gallery — campus, celebrations, activities and everyday learning.',
   })
 
   // Filter the gallery by the selected category chip.
@@ -76,7 +76,7 @@ export default function Gallery() {
 
       <CTASection
         title="Be part of these moments"
-        subtitle="Join the North Public School family and create memories that last a lifetime."
+        subtitle="Join the Apple Valley Creative School family and create memories that last a lifetime."
         primaryLabel="Apply Now"
         primaryTo="/admissions"
       />

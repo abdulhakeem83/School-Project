@@ -2,6 +2,7 @@ import { Suspense, lazy } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 
+import AnnouncementBar from './components/AnnouncementBar'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
@@ -31,6 +32,7 @@ export default function App() {
       </a>
 
       <ScrollToTop />
+      <AnnouncementBar />
       <Navbar />
 
       <main id="main-content" className="flex-1">

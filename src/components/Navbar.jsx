@@ -46,7 +46,7 @@ export default function Navbar() {
       }`}
     >
       <nav className="container-page flex h-16 items-center justify-between lg:h-20" aria-label="Primary">
-        <Link to="/" aria-label="North Public School — Home">
+        <Link to="/" aria-label="Apple Valley Creative School — Home">
           {/* Use light logo text while transparent over the hero */}
           <div className={transparent ? '[&_span]:!text-white [&_.text-slate-500]:!text-white/70' : ''}>
             <Logo />

@@ -19,7 +19,7 @@ export default function Contact() {
   useSEO({
     title: 'Contact Us',
     description:
-      'Get in touch with North Public School. Find our address, phone, email, school hours and send us a message using the contact form.',
+      'Get in touch with Apple Valley Creative School, Basavakalyan. Find our address, phone numbers, email, school hours and send us a message using the contact form.',
   })
 
   const handleChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }))
@@ -35,7 +35,7 @@ export default function Contact() {
   const infoCards = [
     { icon: MapPin, title: 'Visit Us', lines: CONTACT.addressLines },
     { icon: Phone, title: 'Call Us', lines: [CONTACT.phone, CONTACT.altPhone] },
-    { icon: Mail, title: 'Email Us', lines: [CONTACT.email, CONTACT.admissionsEmail] },
+    { icon: Mail, title: 'Email Us', lines: [CONTACT.email] },
     { icon: Clock, title: 'School Hours', lines: [CONTACT.hours, CONTACT.officeHours] },
   ]
 
@@ -128,38 +128,43 @@ export default function Contact() {
             </form>
           </motion.div>
 
-          {/* Map placeholder + quick contact */}
+          {/* Map + key contacts */}
           <motion.div variants={slideRight} initial="hidden" whileInView="show" viewport={inView} className="flex flex-col gap-6">
-            <div className="card-base flex flex-1 flex-col items-center justify-center overflow-hidden p-0">
-              <div className="relative flex h-full min-h-[280px] w-full flex-col items-center justify-center bg-gradient-to-br from-primary-100 via-primary-50 to-white text-center">
-                {/* Decorative grid pattern */}
-                <div className="pointer-events-none absolute inset-0 opacity-40 [background-image:linear-gradient(#0F4C8115_1px,transparent_1px),linear-gradient(90deg,#0F4C8115_1px,transparent_1px)] [background-size:28px_28px]" />
-                <MapPin className="relative h-12 w-12 text-primary" aria-hidden="true" />
-                <p className="relative mt-3 max-w-xs px-6 font-medium text-primary-800">
-                  {SCHOOL.name}
-                </p>
-                <p className="relative mt-1 max-w-xs px-6 text-sm text-slate-600">
-                  {CONTACT.addressLines.join(', ')}
-                </p>
-                <span className="relative mt-3 rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-slate-500 ring-1 ring-slate-200">
-                  Google Map — integration in Phase 2
-                </span>
-              </div>
+            <div className="card-base flex-1 overflow-hidden p-0">
+              <iframe
+                title={`${SCHOOL.name} location map`}
+                src="https://maps.google.com/maps?q=Apple%20Valley%20Creative%20School%2C%20Chilla%20Galli%2C%20Basavakalyan%2C%20Bidar%2C%20Karnataka%20585327&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                className="h-full min-h-[280px] w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
             </div>
 
-            <div className="card-base flex items-center gap-4 p-6">
-              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/15 text-accent-700">
-                <MessageSquare className="h-6 w-6" aria-hidden="true" />
-              </span>
-              <div>
+            <div className="card-base p-6">
+              <div className="flex items-center gap-3">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/15 text-accent-700">
+                  <MessageSquare className="h-6 w-6" aria-hidden="true" />
+                </span>
                 <h3 className="font-semibold text-ink">Prefer to call?</h3>
-                <a
-                  href={`tel:${CONTACT.phone.replace(/\s/g, '')}`}
-                  className="text-sm font-medium text-primary hover:underline"
-                >
-                  {CONTACT.phone}
-                </a>
               </div>
+              <ul className="mt-4 space-y-2.5 text-sm">
+                {CONTACT.contacts.map((c) => (
+                  <li key={c.name} className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:justify-between">
+                    <span className="font-medium text-ink">{c.name}</span>
+                    <span className="flex flex-wrap gap-x-3 text-primary">
+                      <a href={`tel:${c.phone.replace(/\s/g, '')}`} className="hover:underline">
+                        {c.phone}
+                      </a>
+                      {c.altPhone && (
+                        <a href={`tel:${c.altPhone.replace(/\s/g, '')}`} className="hover:underline">
+                          {c.altPhone}
+                        </a>
+                      )}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </motion.div>
         </div>

@@ -32,7 +32,7 @@ export default function FacilityCard({ facility, variant = 'full' }) {
       <div className="relative h-52 overflow-hidden">
         <SmartImage
           src={src}
-          alt={`${title} at North Public School`}
+          alt={`${title} at Apple Valley Creative School`}
           label={title}
           className="h-full w-full"
           imgClassName="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"

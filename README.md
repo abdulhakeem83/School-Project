@@ -1,8 +1,8 @@
-# North Public School — Website (Phase 1)
+# Apple Valley Creative School — Website
 
-> _Learning Today, Leading Tomorrow_
+> _Where Creativity Meets Excellence_
 
-A complete, production-quality **static** marketing website for **North Public School**, built with React + Vite + Tailwind CSS. This is **Phase 1** — a polished, responsive, client-ready design with **dummy/static data only** (no backend, no database, no APIs). It is architected so it can grow into a full **School ERP** in Phase 2 without a redesign.
+A complete, production-quality **static** marketing website for **Apple Valley Creative School**, Basavakalyan (a unit of The SANA Educational & Cultural Trust), built with React + Vite + Tailwind CSS. It is a polished, responsive, client-ready design. Some sections use placeholder content (faculty, fees, gallery photos, testimonials) that should be replaced with the school's real details — see **Content to replace** below. It is architected so it can grow into a full **School ERP** later without a redesign.
 
 ---
 
@@ -69,8 +69,9 @@ school-project-website/
 
 | Token       | Value     | Use              |
 | ----------- | --------- | ---------------- |
-| Primary     | `#0F4C81` | Brand blue       |
-| Accent      | `#FFB703` | Highlights / CTA |
+| Primary     | `#1D4ED8` | Brand blue       |
+| Accent      | `#FFC20E` | Yellow · CTA     |
+| Brand red   | `#E11D2A` | Logo / ribbons   |
 | Success     | `#2E8B57` | Confirmations    |
 | Background   | `#F8FAFC` | Page surface     |
 | Text (ink)  | `#1E293B` | Body text        |
@@ -139,4 +140,21 @@ All content currently lives in `src/data/` — swap these modules for API calls 
 
 ---
 
-_© North Public School. Phase 1 — static website for design approval._
+## 📝 Content to replace (placeholders)
+
+Search the code for `TODO` and `To be updated`, and update these with the school's real data:
+
+- **Logo** → add `public/images/logo.png` (see `public/images/README.md`).
+- **Faculty** → `src/data/teachers.js` (real names, subjects, optional photos).
+- **Fees** → `src/data/admissions.js` (`FEE_STRUCTURE`, currently "On request").
+- **Stats** → `src/data/highlights.js` (`STATS` — student/teacher counts, years).
+- **Photos** → drop real images in `public/images/` and switch `photo(...)` to `asset(...)`.
+- **Testimonials & News** → `src/data/testimonials.js`, `src/data/news.js`.
+- **Social links** → `src/data/constants.js` (`SOCIAL_LINKS`, currently `#`).
+
+Central school info (name, address, phones, email, tagline) lives in
+`src/data/constants.js`.
+
+---
+
+_© Apple Valley Creative School · The SANA Educational & Cultural Trust, Basavakalyan._

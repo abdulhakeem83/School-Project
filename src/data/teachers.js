@@ -1,122 +1,40 @@
-// Faculty directory (static dummy data).
-// `photo` is intentionally omitted for people — the TeacherCard renders a
-// clean, branded initials avatar. Add a `photo` URL here in Phase 2 to show
-// real headshots without changing the UI.
+// Faculty directory — PLACEHOLDER data with friendly dummy names and dummy
+// avatar photos. Replace `name`, `qualification`, `experience` and set a real
+// `photo` (e.g. asset('images/faculty/name.jpg')) with the school's actual
+// staff details before treating this as the official faculty list.
+
+import { avatarUrl } from './constants'
+
+const withPhoto = (person) => ({ ...person, photo: person.photo || avatarUrl(person.name) })
 
 export const LEADERSHIP = [
   {
     id: 'l1',
-    name: 'Dr. Anjali Mehta',
+    name: 'Mr. Abdul Rahman',
     role: 'Principal',
-    qualification: 'Ph.D. in Education, M.A. English',
-    experience: '28 years',
-    subject: 'Leadership & English',
+    qualification: 'M.A., B.Ed.',
+    experience: '20+ years',
+    subject: 'Academic Leadership',
   },
   {
     id: 'l2',
-    name: 'Mr. Rajesh Nair',
+    name: 'Mrs. Ayesha Begum',
     role: 'Vice Principal',
-    qualification: 'M.Sc. Mathematics, B.Ed.',
-    experience: '22 years',
-    subject: 'Academics & Mathematics',
+    qualification: 'M.Sc., B.Ed.',
+    experience: '15+ years',
+    subject: 'Academics & Administration',
   },
-]
+].map(withPhoto)
 
 export const TEACHERS = [
-  {
-    id: 't1',
-    name: 'Mrs. Priya Sharma',
-    role: 'Senior Teacher',
-    qualification: 'M.Sc. Physics, B.Ed.',
-    experience: '15 years',
-    subject: 'Physics',
-  },
-  {
-    id: 't2',
-    name: 'Mr. Arjun Verma',
-    role: 'Senior Teacher',
-    qualification: 'M.A. History, B.Ed.',
-    experience: '12 years',
-    subject: 'Social Science',
-  },
-  {
-    id: 't3',
-    name: 'Ms. Kavya Reddy',
-    role: 'Teacher',
-    qualification: 'M.Sc. Chemistry, B.Ed.',
-    experience: '9 years',
-    subject: 'Chemistry',
-  },
-  {
-    id: 't4',
-    name: 'Mr. Sameer Khan',
-    role: 'Teacher',
-    qualification: 'M.C.A., B.Ed.',
-    experience: '10 years',
-    subject: 'Computer Science',
-  },
-  {
-    id: 't5',
-    name: 'Mrs. Deepa Iyer',
-    role: 'Senior Teacher',
-    qualification: 'M.A. English, B.Ed.',
-    experience: '14 years',
-    subject: 'English',
-  },
-  {
-    id: 't6',
-    name: 'Mr. Vikram Singh',
-    role: 'Sports Coach',
-    qualification: 'M.P.Ed., NIS Certified',
-    experience: '11 years',
-    subject: 'Physical Education',
-  },
-  {
-    id: 't7',
-    name: 'Ms. Neha Gupta',
-    role: 'Teacher',
-    qualification: 'M.Sc. Biology, B.Ed.',
-    experience: '8 years',
-    subject: 'Biology',
-  },
-  {
-    id: 't8',
-    name: 'Mrs. Sunita Rao',
-    role: 'Primary Teacher',
-    qualification: 'M.A. Hindi, D.El.Ed.',
-    experience: '16 years',
-    subject: 'Hindi',
-  },
-  {
-    id: 't9',
-    name: 'Mr. Aditya Menon',
-    role: 'Teacher',
-    qualification: 'M.Com, B.Ed.',
-    experience: '7 years',
-    subject: 'Commerce',
-  },
-  {
-    id: 't10',
-    name: 'Ms. Ritu Bansal',
-    role: 'Pre-Primary Teacher',
-    qualification: 'M.A., NTT Certified',
-    experience: '10 years',
-    subject: 'Early Childhood',
-  },
-  {
-    id: 't11',
-    name: 'Mr. Karan Malhotra',
-    role: 'Teacher',
-    qualification: 'M.Sc. Mathematics, B.Ed.',
-    experience: '13 years',
-    subject: 'Mathematics',
-  },
-  {
-    id: 't12',
-    name: 'Mrs. Fatima Sheikh',
-    role: 'Music Teacher',
-    qualification: 'M.A. Music (Vocal)',
-    experience: '9 years',
-    subject: 'Music & Arts',
-  },
-]
+  { id: 't1', name: 'Ms. Fatima Sheikh', role: 'Pre-Primary Teacher', qualification: 'B.Ed. (Early Childhood)', experience: '8 years', subject: 'Pre-Primary' },
+  { id: 't2', name: 'Mrs. Sana Kausar', role: 'Primary Teacher', qualification: 'B.A., D.El.Ed.', experience: '10 years', subject: 'Primary Section' },
+  { id: 't3', name: 'Mr. Imran Ahmed', role: 'Senior Teacher', qualification: 'M.A. English, B.Ed.', experience: '12 years', subject: 'English' },
+  { id: 't4', name: 'Mr. Ravi Kumar', role: 'Senior Teacher', qualification: 'M.Sc. Mathematics, B.Ed.', experience: '11 years', subject: 'Mathematics' },
+  { id: 't5', name: 'Ms. Zainab Ali', role: 'Teacher', qualification: 'M.Sc., B.Ed.', experience: '7 years', subject: 'Science' },
+  { id: 't6', name: 'Mr. Mohammed Yousuf', role: 'Teacher', qualification: 'M.A. History, B.Ed.', experience: '9 years', subject: 'Social Science' },
+  { id: 't7', name: 'Maulana Abdul Qadir', role: 'Deeni Teacher', qualification: 'Aalim, Islamic Studies', experience: '14 years', subject: 'Deeni (Religious) Education' },
+  { id: 't8', name: 'Mrs. Shabana Parveen', role: 'Teacher', qualification: 'M.A. Urdu, B.Ed.', experience: '10 years', subject: 'Urdu' },
+  { id: 't9', name: 'Mr. Prakash Rao', role: 'Teacher', qualification: 'M.A. Kannada, B.Ed.', experience: '8 years', subject: 'Kannada' },
+  { id: 't10', name: 'Ms. Nikhat Fatima', role: 'Teacher', qualification: 'M.C.A., B.Ed.', experience: '6 years', subject: 'Computer Basics' },
+].map(withPhoto)

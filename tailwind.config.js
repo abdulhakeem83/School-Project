@@ -4,30 +4,44 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Brand palette for North Public School.
+        // Brand palette for Apple Valley Creative School — Blue / Red / Yellow.
+        // Primary = brand blue (used across the school building & signage).
         primary: {
-          DEFAULT: '#0F4C81',
-          50: '#eef5fb',
-          100: '#d5e6f4',
-          200: '#aacce9',
-          300: '#7aaedb',
-          400: '#4a8ecb',
-          500: '#2b71b3',
-          600: '#1d5a94',
-          700: '#0F4C81',
-          800: '#0c3c66',
-          900: '#0a2f4f',
+          DEFAULT: '#1D4ED8',
+          50: '#eef4ff',
+          100: '#d9e6ff',
+          200: '#b3ccff',
+          300: '#84a9ff',
+          400: '#5a86f5',
+          500: '#3563e0',
+          600: '#1D4ED8',
+          700: '#1a41b0',
+          800: '#173690',
+          900: '#152e75',
         },
+        // Accent = brand yellow (highlights, buttons, CTAs).
         accent: {
-          DEFAULT: '#FFB703',
-          50: '#fff8e6',
-          100: '#ffedbf',
-          200: '#ffdf85',
-          300: '#ffd04d',
-          400: '#ffc21f',
-          500: '#FFB703',
-          600: '#d99a00',
-          700: '#a67600',
+          DEFAULT: '#FFC20E',
+          50: '#fff9e6',
+          100: '#ffefbf',
+          200: '#ffe285',
+          300: '#ffd44d',
+          400: '#ffcb26',
+          500: '#FFC20E',
+          600: '#e0a600',
+          700: '#a67c00',
+        },
+        // Brand red (logo lettering, ribbons) — available as a supporting hue.
+        brandred: {
+          DEFAULT: '#E11D2A',
+          50: '#fdeaec',
+          100: '#fbccd0',
+          200: '#f5969d',
+          300: '#ef616b',
+          400: '#e93b47',
+          500: '#E11D2A',
+          600: '#c01623',
+          700: '#96111b',
         },
         success: {
           DEFAULT: '#2E8B57',
@@ -41,9 +55,9 @@ export default {
         display: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        soft: '0 4px 20px -4px rgba(15, 76, 129, 0.12)',
-        card: '0 8px 30px -8px rgba(15, 76, 129, 0.18)',
-        lift: '0 20px 45px -15px rgba(15, 76, 129, 0.30)',
+        soft: '0 4px 20px -4px rgba(29, 78, 216, 0.12)',
+        card: '0 8px 30px -8px rgba(29, 78, 216, 0.18)',
+        lift: '0 20px 45px -15px rgba(29, 78, 216, 0.30)',
       },
       borderRadius: {
         xl: '1rem',
@@ -52,8 +66,8 @@ export default {
       },
       backgroundImage: {
         'hero-gradient':
-          'linear-gradient(120deg, rgba(10,47,79,0.92) 0%, rgba(15,76,129,0.80) 45%, rgba(15,76,129,0.55) 100%)',
-        'brand-gradient': 'linear-gradient(120deg, #0F4C81 0%, #1d5a94 100%)',
+          'linear-gradient(120deg, rgba(21,46,117,0.92) 0%, rgba(29,78,216,0.80) 45%, rgba(29,78,216,0.55) 100%)',
+        'brand-gradient': 'linear-gradient(120deg, #152e75 0%, #1D4ED8 100%)',
       },
       keyframes: {
         'float-slow': {
