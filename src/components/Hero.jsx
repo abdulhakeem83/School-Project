@@ -18,7 +18,7 @@ export default function Hero() {
         <img
           src={HERO_BG}
           alt={`${SCHOOL.name} campus building`}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-[center_28%]"
           fetchpriority="high"
         />
         {/* Gradient overlay for legible text */}

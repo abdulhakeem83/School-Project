@@ -72,7 +72,7 @@ export default function Navbar() {
         {/* Desktop CTA */}
         <div className="hidden items-center gap-3 lg:flex">
           <Link
-            to="/login"
+            to="/erp/login"
             className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300 ${
               transparent
                 ? 'bg-white text-primary hover:bg-accent hover:text-ink'
@@ -127,7 +127,7 @@ export default function Navbar() {
               ))}
               <li className="mt-2">
                 <Link
-                  to="/login"
+                  to="/erp/login"
                   className="flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-base font-semibold text-white"
                 >
                   <LogIn className="h-4 w-4" aria-hidden="true" />

@@ -67,13 +67,13 @@ export default function About() {
       <section className="container-page py-20">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <motion.div variants={slideRight} initial="hidden" whileInView="show" viewport={inView}>
-            <div className="overflow-hidden rounded-3xl shadow-card">
+            <div className="group overflow-hidden rounded-3xl shadow-card">
               <SmartImage
                 src={asset('images/campus/building.jpg')}
                 alt={`${SCHOOL.name} campus`}
                 label="Our Campus"
                 className="aspect-[4/3] w-full"
-                imgClassName="aspect-[4/3] w-full object-cover"
+                imgClassName="aspect-[4/3] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
               />
             </div>
           </motion.div>

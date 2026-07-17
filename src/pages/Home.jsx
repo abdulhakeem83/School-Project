@@ -76,13 +76,13 @@ export default function Home() {
             viewport={inView}
             className="relative"
           >
-            <div className="overflow-hidden rounded-3xl shadow-card">
+            <div className="group overflow-hidden rounded-3xl shadow-card">
               <SmartImage
                 src={asset('images/campus/student-book.jpg')}
                 alt={`A student at ${SCHOOL.name}`}
                 label="Our Students"
-                className="aspect-[4/5] w-full"
-                imgClassName="aspect-[4/5] w-full object-cover"
+                className="aspect-square w-full"
+                imgClassName="aspect-square w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-110"
               />
             </div>
             {/* Floating badge */}
